@@ -85,11 +85,11 @@ function draw() {
     spawnObstacles();
 
 
-     if(trex.isTouching(obstaclesGroup)){
-      gameState=END
+     if(obstaclesGroup.isTouching(trex)){
+      gameState=END;
      }
-    
-   if(gameState==END){
+  }
+   else   if(gameState==END){
     ground.velocityX=0;
     trex.velocityY=0;
    }
@@ -100,7 +100,7 @@ function draw() {
   
   
   drawSprites();
-}}
+}
 
 function spawnObstacles(){
  if (frameCount % 60 === 0){
